@@ -1,0 +1,21 @@
+.feedback-page {
+    padding: 40px;
+    background-color: #182919;
+    color: white;
+  }
+  
+  .feedback {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .feedback-item {
+    width: 250px;
+    background-color: #305332;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+  }
+  

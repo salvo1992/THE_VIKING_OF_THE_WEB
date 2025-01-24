@@ -1,0 +1,81 @@
+/* Impostazioni base */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    animation: fadeInAndRotate 10s infinite;
+    transition: opacity 1s ease-in-out;
+    border-radius: 50%; /* Bordo completamente sferico */
+    object-fit: cover; /* Assicura che l'immagine copra tutto il cerchio */
+}
+
+/* Animazione: fade in e rotazione */
+@keyframes fadeInAndRotate {
+    0%, 100% {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+    10%, 90% {
+        opacity: 1;
+        
+    }
+}
+
+/* Impostazione per i loghi con delay crescente */
+.logo:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.logo:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.logo:nth-child(3) {
+    animation-delay: 4s;
+}
+
+.logo:nth-child(4) {
+    animation-delay: 6s;
+}
+
+.logo:nth-child(5) {
+    animation-delay: 8s;
+}
+
+/* Aggiungiamo una luminosità crescente */
+.logo:nth-child(1) {
+    animation: fadeInAndRotate 10s infinite, glow 10s infinite;
+}
+
+.logo:nth-child(2) {
+    animation: fadeInAndRotate 10s infinite 2s, glow 10s infinite 2s;
+}
+
+.logo:nth-child(3) {
+    animation: fadeInAndRotate 10s infinite 4s, glow 10s infinite 4s;
+}
+
+.logo:nth-child(4) {
+    animation: fadeInAndRotate 10s infinite 6s, glow 10s infinite 6s;
+}
+
+.logo:nth-child(5) {
+    animation: fadeInAndRotate 10s infinite 8s, glow 10s infinite 8s;
+}
+
+/* Animazione della luminosità */
+@keyframes glow {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(2); /* Luminosità pulsante */
+    }
+}

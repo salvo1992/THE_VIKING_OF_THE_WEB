@@ -1,0 +1,18 @@
+.clients-page {
+    padding: 40px;
+    background-color: #182919;
+    color: white;
+  }
+  
+  .clients {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .client img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+  }

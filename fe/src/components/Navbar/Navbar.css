@@ -1,0 +1,134 @@
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.396);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar.scrolled {
+    background-color: #111;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+  }
+  
+  .navbar-links {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar-links li {
+    margin: 0 20px;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .navbar .logo {
+    /* Puoi aggiungere un'animazione o un effetto dinamico sul logo */
+    animation: logoAnim 2s infinite alternate;
+  }
+  
+  .navbar .logo img {
+    height: 50px;
+  }
+  
+  @keyframes logoAnim {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .navbar.scrolled .navbar-links a {
+    color: #f39c12;
+  }
+  
+  /* Menu mobile */
+  .menu-button {
+    display: none;  /* Nascondiamo il bottone nel desktop */
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .menu-button .menu-icon {
+    font-size: 30px;
+  }
+  
+  .navbar-links.open {
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    animation: slideDown 0.5s ease-out;
+  }
+  
+  .navbar-links.open li {
+    margin: 20px 0;
+  }
+  
+  .navbar-links.open li a {
+    font-size: 24px;
+    color: #f39c12;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links.open li a:hover {
+    color: #fff;
+  }
+  
+  /* Animazione di apertura del menu mobile */
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Media query per il menu mobile */
+  @media screen and (max-width: 768px) {
+    .navbar-links {
+      display: none;
+    }
+  
+    .menu-button {
+      display: block;
+    }
+  
+    .navbar-links.open {
+      display: block;
+    }
+  }
+  

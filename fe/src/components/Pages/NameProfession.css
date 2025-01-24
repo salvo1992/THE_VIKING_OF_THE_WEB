@@ -1,0 +1,42 @@
+.name-profession {
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .name-title {
+    font-size: 3rem;
+    color: #2ed612;
+    font-weight: bold;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+  }
+  
+  .name-title::after {
+    content: '';
+    display: block;
+    height: 10px;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    margin-top: 10px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: width 0.5s ease-in-out;
+  }
+  
+  .name-profession h1 {
+    animation: fadeIn 3s ease-in-out infinite;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  
