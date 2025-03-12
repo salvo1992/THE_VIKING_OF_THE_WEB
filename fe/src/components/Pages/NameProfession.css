@@ -2,10 +2,10 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    margin: 20px;
-    margin-top: 10%;
+  
+    margin-top: 5%;
     align-items: flex-start;
-    width: 50%;
+    width: -1%;
   }
   
   .name-title {
@@ -20,7 +20,7 @@
     content: '';
     display: block;
     height: 10px;
-    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    background: linear-gradient(90deg, #9c9aff, #c4d1fa);
     margin-top: 10px;
     width: 50%;
     margin-left: auto;

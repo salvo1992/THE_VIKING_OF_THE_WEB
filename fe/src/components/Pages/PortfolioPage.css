@@ -1,7 +1,10 @@
 .portfolio-page {
-  padding: 40px;
+  padding: 70px;
   background-color: #182919;
   color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .portfolio-gallery {

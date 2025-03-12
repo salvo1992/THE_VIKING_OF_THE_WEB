@@ -1,206 +1,238 @@
+/* Imposta l'intera home come un contenitore flessibile */
 .homepage {
-    text-align: center;
-    background-color: #182919;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  
-  .profile {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 220px;
-    width: 42%;
-  }
-  
-  .photo-container {
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-  }
-  
-  .profile-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    animation: glow 1.5s infinite;
-    transition: transform 0.3s ease;
-  }
-  .intro-text {
-
-    font-size: 1.5rem;
-    color: white;
-    text-align: left;
-    animation: slideIn 1s ease-out;
-    width: 72%;
-  }
-  
-  .highlight {
-    color: #f39c12;
-  }
-  
-  .cta-button {
-    display: inline-block;
-    margin-top: 85px;
-    padding: 19px 37px;
-    background-color: #f39c12;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 50px;
-    transition: all 0.3s ease;
+  position: static !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #182919;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+ 
 }
 
-  .cta-button:hover {
-  background-color: #e67e22;
-  transform: scale(1.05);
+
+/* Posiziona il glitch come background fisso */
+.homepage > div:first-child {
+  position: fixed ! important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Assicura che il glitch rimanga dietro tutto */
+  background-color: #000000 !important;
 }
-/* Aggiunta dell'effetto di profondità per le icone */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-    animation: slideIn 1s ease-out;
-  }
-  
-  .social-icon {
-    font-size: 2rem;
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    border-radius: 10px; /* Bordi arrotondati */
-    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Transizioni per tutti gli effetti */
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* Ombra iniziale leggera */
-    background-color: transparent; /* Sfondo trasparente */
-    border: 2px solid transparent; /* Inizialmente nessun bordo */
-  }
-  
-  /* Colori personalizzati per ogni icona, come nella foto */
-  .linkedin {
-    background-color: #0e76a8;
-    box-shadow: 0 0 10px rgba(14, 118, 168, 0.5);
-  }
-  
-  .gmail {
-    background-color: #ea4335;
-    box-shadow: 0 0 10px rgba(234, 67, 53, 0.5);
-  }
-  
-  .whatsapp {
-    background-color: #25d366;
-    box-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
-  }
-  
-  .fiverr {
-    background-color: #1dbf73;
-    box-shadow: 0 0 10px rgba(29, 191, 115, 0.5);
-  }
-  
-  .discord {
-    background-color: #7289da;
-    box-shadow: 0 0 10px rgba(114, 137, 218, 0.5);
-  }
-  
-  /* Effetto al passaggio del mouse */
-  .social-icon:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 25px rgba(255, 255, 255, 1);
-    opacity: 1;
-    border: 2px solid #f39c12;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  /* Animazione per l'entrata delle icone */
-  .linkedin {
-    animation: fadeInFromLeft 1s ease-out;
-  }
-  
-  .gmail {
-    animation: fadeInFromLeft 1s ease-out 0.2s;
-  }
-  
-  .whatsapp {
-    animation: fadeInFromLeft 1s ease-out 0.4s;
-  }
-  
-  .fiverr {
-    animation: fadeInFromLeft 1s ease-out 0.6s;
-  }
-  
-  .discord {
-    animation: fadeInFromLeft 1s ease-out 0.8s;
-  }
-  
-  /* Animazione per l'entrata delle icone */
-  @keyframes fadeInFromLeft {
-    0% {
-      opacity: 0;
-      transform: translateX(-30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  /* Animazione per l'entrata in modo dinamico */
-  @keyframes slideIn {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Animazione glow */
-  @keyframes glow {
-    0%, 100% {
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    }
-    50% {
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
-    }
-  }
-  
-  .social-icon:hover {
-    animation: glow 1.5s infinite;
-  }
-  
-  /* Profondità per le icone */
-  .social-icon {
-    position: relative;
-    z-index: 1;
-  }
-  
-  /* Fondo luminoso per il profilo */
-  .profile-photo {
-    animation: glow 1.5s infinite;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-  }
-  
-  .profile-photo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(255, 255, 255, 1);
-  }
-  
-  /* Hover glow effect for social icon */
-  .social-icon:hover {
-    transform: scale(1.1);
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-  }
-  
-  
-  p{
+
+/* Contenitore del contenuto per mantenerlo sopra il background */
+.content {
+  position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    margin: 30px;
+    width: 100%;
+    padding: 5px;
+    color: white;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    overflow-y: auto; /* Abilita lo scroll verticale */
+    overflow-x: hidden;
+    top: 100px;
+    align-content: space-around;
+}
+
+/* Profilo */
+.profile {
+  display: flex;
+      justify-content: flex-end;
+      /* margin-top: 0px; */
+     
+}
+/* Contenitore della foto con bordo animato */
+.photo-container {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  z-index: 2; /* Assicura che sia sopra lo sfondo */
+}
+
+/* Bordo animato effetto glow */
+.photo-container::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border-radius: 50%;
+  border: 6px solid transparent;
+  animation: glowingBorder 3s linear infinite;
+  z-index: 3; /* Assicura che il bordo rimanga dietro la foto */
+}
+
+/* Foto del profilo */
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2; /* Assicura che sia sopra tutto */
+  transition: transform 0.3s ease;
+}
+
+/* Animazione del bordo */
+@keyframes glowingBorder {
+  0% {
+    border-color: rgba(0, 183, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 183, 255, 0.5);
+    transform: rotate(0deg);
   }
+  50% {
+    border-color: rgb(244, 246, 247);
+    box-shadow: 0 0 20px rgb(241, 242, 242);
+    transform: rotate(180deg);
+  }
+  100% {
+    border-color: rgba(235, 10, 88, 0.853);
+    box-shadow: 0 0 10px rgba(233, 2, 148, 0.5);
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Testo introduttivo */
+.intro-text {
+  font-size: 1.5rem;
+  text-align: center;
+  animation: slideIn 1s ease-out;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 20px;
+}
+
+/* Evidenziazione */
+.highlight {
+  color: #f39c12;
+}
+
+/* Pulsante CTA */
+.cta-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 30px;
+  background-color: #f39d1200;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  border: 2px solid rgb(27, 218, 10);
+}
+
+.cta-button:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 1);
+  border: 2px solid rgb(27, 218, 10);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Sezione icone social */
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.social-icon {
+  font-size: 1.8rem;
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+  border: 2px solid transparent;
+}
+
+/* Stili per ogni social */
+.linkedin { background-color: #0e76a8; }
+.gmail { background-color: #ea4335; }
+.whatsapp { background-color: #25d366; }
+.fiverr { background-color: #1dbf73; }
+.discord { background-color: #7289da; }
+
+/* Effetto al passaggio del mouse */
+.social-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 1);
+  border: 2px solid #f39c12;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Animazioni */
+@keyframes fadeInFromLeft {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.8); }
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .homepage {
+      flex-direction: row;
+      height: auto;
+      min-height: 100vh;
+      max-height: 100vh;
+      overflow-y: auto; /* Abilita lo scroll verticale */
+      overflow-x: hidden;
+  }
+
+  .profile {
+      width: 100%;
+      margin-top: 30px;
+      justify-content: center;
+  }
+
+  .photo-container {
+      width: 180px;
+      height: 180px;
+  }
+
+  .intro-text {
+      font-size: 1rem;
+      width: 90%;
+      text-align: center;
+  }
+
+  .cta-button {
+      padding: 12px 25px;
+      margin-top: 20px;
+  }
+
+  .social-icons {
+      gap: 10px;
+  }
+
+  .social-icon {
+      font-size: 1.5rem;
+      padding: 10px;
+  }
+}

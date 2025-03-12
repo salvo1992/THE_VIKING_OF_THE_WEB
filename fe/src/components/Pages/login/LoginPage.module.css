@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  
+ 
+}
+
+.loginContainer {
+  background: url("https://www.forensicfocus.com/stable/wp-content/uploads/2019/05/depositphotos_56658535_s-2019.jpg")
+    no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.holder {
+  position: relative;
+}
+
+.holder::before,
+.holder::after {
+  animation: orbit 5s linear infinite;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  content: "";
+  height: 150px;
+  position: absolute;
+  width: 150px;
+}
+
+.holder::before {
+  background: radial-gradient(to bottom left, #ffe897, #f98a05);
+}
+
+.holder::after {
+  animation-delay: -2.5s;
+  background: radial-gradient(to top left, #e0e793, #6dd0f1);
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
+
+/* BOX LOGIN - BORDO NEON */
+.box {
+  position: relative;
+  width: 380px;
+  height: 420px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px 10px rgba(81, 72, 72, 0.336);
+  animation: neon-border 4s infinite alternate;
+}
+
+@keyframes neon-border {
+  0% {
+    box-shadow: 0 0 15px #ff0080, 0 0 30px #ff0080;
+  }
+  50% {
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+  }
+  100% {
+    box-shadow: 0 0 15px #ff0080, 0 0 30px #ff0080;
+  }
+}
+
+.box::before,
+.box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  transform-origin: bottom right;
+  background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+  animation: animate 6s linear infinite;
+}
+
+.box::after {
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* FORM */
+form {
+  position: absolute;
+  inset: 2px;
+  background: transparent;
+  padding: 50px 40px;
+  border-radius: 8px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* INPUT STYLE */
+.inputBox {
+  position: relative;
+  width: 300px;
+  margin-top: 35px;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 10px 5px;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid white;
+  color: #fff;
+  font-size: 1em;
+  transition: 0.4s ease-in-out;
+}
+
+/* Effetto ingrandimento input */
+.inputBox input:focus {
+  transform: scale(1.1);
+  border-bottom: 2px solid #45f3ff;
+}
+
+/* Placeholder animato */
+.inputBox span {
+  position: absolute;
+  left: 5px;
+  bottom: 10px;
+  font-size: 1em;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+/* Quando l'utente scrive */
+.inputBox input:focus + span,
+.inputBox input:valid + span {
+  transform: translateY(-20px);
+  font-size: 0.8em;
+  color: #45f3ff;
+}
+
+/* Barra di animazione sotto input */
+.inputBox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #45f3ff;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+
+.inputBox input:focus ~ i {
+  height: 44px;
+}
+
+/* LINKS */
+.links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.links a {
+  font-size: 0.9em;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  color: #45f3ff;
+}
+
+/* BOTTONE LOGIN */
+input[type="submit"] {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  background: #45f3ff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 15px;
+  font-size: 1em;
+  color: black;
+  transition: 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background: #ff0080;
+  color: white;
+}
+
+input[type="submit"]:active {
+  opacity: 0.7;
+}
+
+/* MESSAGGIO DI ERRORE ANIMATO */
+.errorMessage {
+  color: red;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  animation: shake 0.5s infinite alternate;
+}
+
+/* Animazione di movimento */
+@keyframes shake {
+  0% { transform: translateX(-5px); }
+  100% { transform: translateX(5px); }
+}
+
+/* RESPONSIVITÀ */
+@media (max-width: 400px) {
+  .box {
+    width: 320px;
+    height: 400px;
+  }
+
+  .inputBox {
+    width: 280px;
+  }
+
+  .inputBox input {
+    font-size: 0.9em;
+  }
+
+  input[type="submit"] {
+    font-size: 0.9em;
+  }
+}

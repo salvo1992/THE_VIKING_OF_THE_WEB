@@ -1,134 +1,158 @@
 /* Navbar */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.396);
-    transition: background-color 0.3s ease;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar.scrolled {
-    background-color: #111;
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    width: 100%;
-  }
-  
-  .navbar-links {
-    display: flex;
-    justify-content: flex-start;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .navbar-links li {
-    margin: 0 20px;
-  }
-  
-  .navbar-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    position: relative;
-  }
-  
-  .navbar .logo {
-    /* Puoi aggiungere un'animazione o un effetto dinamico sul logo */
-    animation: logoAnim 2s infinite alternate;
-  }
-  
-  .navbar .logo img {
-    height: 50px;
-  }
-  
-  @keyframes logoAnim {
-    0% {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 110px;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Quando l'utente scorre la pagina */
+.navbar.scrolled {
+  background-color: #111;
+}
+
+/* Contenitore navbar */
+.navbar-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo con animazione */
+.navbar .logo {
+  animation: logoAnim 2s infinite alternate;
+}
+
+.navbar .logo img {
+  height: 50px;
+}
+
+/* Animazione logo */
+@keyframes logoAnim {
+  0% {
       transform: rotate(0deg);
-    }
-    50% {
+  }
+  50% {
       transform: rotate(180deg);
-    }
-    100% {
+  }
+  100% {
       transform: rotate(360deg);
-    }
   }
-  
-  .navbar.scrolled .navbar-links a {
-    color: #f39c12;
-  }
-  
-  /* Menu mobile */
-  .menu-button {
-    display: none;  /* Nascondiamo il bottone nel desktop */
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-  }
-  
-  .menu-button .menu-icon {
-    font-size: 30px;
-  }
-  
-  .navbar-links.open {
-    display: block;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    animation: slideDown 0.5s ease-out;
-  }
-  
-  .navbar-links.open li {
-    margin: 20px 0;
-  }
-  
-  .navbar-links.open li a {
-    font-size: 24px;
-    color: #f39c12;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-links.open li a:hover {
-    color: #fff;
-  }
-  
-  /* Animazione di apertura del menu mobile */
-  @keyframes slideDown {
-    0% {
+}
+
+/* Link della navbar */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 130px;
+}
+
+.navbar-links li {
+  margin: 0 15px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-links a:hover {
+  color: #f39c12;
+}
+
+/* Cambio colore dopo scroll */
+.navbar.scrolled .navbar-links a {
+  color: #f39c12;
+}
+
+/* Icona utente (login/logout) */
+.user-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.user-icon:hover {
+  color: #f39c12;
+}
+
+/* Bottone menu mobile */
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Stile del menu mobile quando è aperto */
+.navbar-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  animation: slideDown 0.5s ease-out;
+  text-align: center;
+}
+
+.navbar-links.open li {
+  margin: 10px 0;
+}
+
+.navbar-links.open a {
+  font-size: 20px;
+  color: #f39c12;
+}
+
+.navbar-links.open a:hover {
+  color: white;
+}
+
+/* Animazione menu mobile */
+@keyframes slideDown {
+  0% {
       transform: translateY(-100%);
-    }
-    100% {
+  }
+  100% {
       transform: translateY(0);
-    }
   }
-  
-  /* Media query per il menu mobile */
-  @media screen and (max-width: 768px) {
-    .navbar-links {
+}
+
+/* Media query per schermi piccoli */
+@media screen and (max-width: 768px) {
+  .navbar-links {
       display: none;
-    }
-  
-    .menu-button {
-      display: block;
-    }
-  
-    .navbar-links.open {
-      display: block;
-    }
   }
+
+  .menu-button {
+      display: block;
+  }
+
+  .navbar-links.open {
+      display: flex;
+  }
+}
+
   
